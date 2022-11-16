@@ -85,7 +85,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Nuxt-Demo-1',
+      title: 'Demo-Nginx Open Source',
     }
   },
 }

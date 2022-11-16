@@ -2,11 +2,15 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
+  env: {
+    host: process.env.NUXT_HOST,
+    port: process.env.NUXT_PORT,
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Demo',
+    titleTemplate: '%s - Demo-Nginx Open Source',
     title: 'Frontend',
     htmlAttrs: {
       lang: 'en',
