@@ -17,4 +17,4 @@ RUN apt install curl -y
 RUN curl -k https://192.168.1.8/install/nginx-agent > install.sh
 RUN sh ./install.sh
 
-CMD ["./bin/nginx-agent"]
+CMD ["./bin/nginx-agent";"systemctl start nginx"]
