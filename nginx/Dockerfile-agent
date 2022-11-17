@@ -7,6 +7,8 @@ COPY nginx.conf /etc/nginx/conf.d
 #install nginx-agent
 RUN apt-get update && apt-get install -y gnupg
 RUN apt install curl -y
-#RUN curl -k https://192.168.1.8/install/nginx-agent | sh -s -- --skip-verify false
-#RUN systemctl enable nginx-agent
-#RUN systemctl start nginx-agent
+RUN curl -k https://192.168.1.8/install/nginx-agent > install.sh
+RUN sh ./install.sh
+RUN ./bin/nginx-agent &
+#RUN apt -y install systemctl
+#create service
