@@ -1,4 +1,4 @@
-FROM ubuntu/nginx
+FROM ubuntu/nginx:1.18-22.04_beta
 
 RUN rm -rf /etc/nginx/conf.d/default.conf
 
