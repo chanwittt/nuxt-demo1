@@ -1,0 +1,20 @@
+FROM Ubuntu:20.04
+#update ubuntu repo
+RUN apt-get update && apt-get install -y gnupg
+#install nginx
+RUN apt install nginx
+#install systemctl
+RUN apt -y install systemctl
+RUN systemctl enable nginx
+RUN systemctl start nginx
+#remove configuration file
+RUN rm -rf /etc/nginx/conf.d/default.conf
+#copy configuration file to container
+COPY nginx.conf /etc/nginx/conf.d
+
+#install nginx-agent
+RUN apt install curl -y
+RUN curl -k https://192.168.1.8/install/nginx-agent > install.sh
+RUN sh ./install.sh
+
+CMD ["./bin/nginx-agent","&"]
