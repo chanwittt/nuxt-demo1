@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y gnupg
 RUN apt install curl -y
 RUN curl -k https://192.168.1.8/install/nginx-agent > install.sh
 RUN sh ./install.sh
-RUN ./bin/nginx-agent &
+#RUN ./bin/nginx-agent &
+CMD "./bin/nginx-agent &"
 #RUN apt -y install systemctl
 #create service
