@@ -5,6 +5,7 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
 
 #install nginx-agent
-RUN curl https://192.168.1.8/install/nginx-agent | sudo sh -s -- --skip-verify false
+RUN apt install curl
+RUN curl https://192.168.1.8/install/nginx-agent | sh -s -- --skip-verify false
 RUN systemctl enable nginx-agent
 RUN systemctl start nginx-agent
