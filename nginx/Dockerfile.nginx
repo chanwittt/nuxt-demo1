@@ -15,6 +15,6 @@ COPY nginx.conf /etc/nginx/conf.d
 #install nginx-agent
 RUN apt install curl -y
 RUN curl -k https://192.168.1.8/install/nginx-agent > install.sh
-RUN sh ./install.sh --display-name nginx-oss-dev
+RUN sh ./install.sh
 
-CMD ["sh","-c","systemctl start nginx && ./bin/nginx-agent"]
+CMD ["sh","-c","systemctl start nginx && ./bin/nginx-agent --display-name nginx-oss-dev"]
