@@ -32,7 +32,9 @@ export default {
       post: '',
     }
   },
-  mounted() {},
+  mounted() {
+    this.loadProduct()
+  },
   methods: {
     async loadProduct() {
       await axios.get('http://nginx/api/f5').then((response) => {
